@@ -15,9 +15,7 @@ const sendData = data => {
     fetch(url, {
         method: 'POST',
         body: JSON.stringify({
-            "user": data.user,
-            "age": data.age,
-            "role": data.role
+            data
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -28,4 +26,4 @@ const sendData = data => {
     .catch(error => console.log(error));
 };
 
-getData("./db.json");
+getData("file:///D:/Learning/javascript/Glo%20Academy/Home%20Work%2026/db.json");
