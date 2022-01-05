@@ -9,13 +9,15 @@ const getData = file => {
     .catch(error => console.log(error));
 };
 
-const sendData = parameters => {
+const sendData = data => {
     let url = 'https://jsonplaceholder.typicode.com/posts/';
     
     fetch(url, {
         method: 'POST',
         body: JSON.stringify({
-            parameters
+            "user": data.user,
+            "age": data.age,
+            "role": data.role
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -26,4 +28,4 @@ const sendData = parameters => {
     .catch(error => console.log(error));
 };
 
-getData("db.json");
+getData("./db.json");
